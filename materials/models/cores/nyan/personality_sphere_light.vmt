@@ -1,0 +1,17 @@
+VertexlitGeneric
+{
+$basetexture "models\cores\nyan\personality_sphere_light"
+$selfillum 1
+
+
+
+
+
+Proxies
+{
+LightedMouth
+{
+resultVar $selfillumtint
+}
+}
+}
