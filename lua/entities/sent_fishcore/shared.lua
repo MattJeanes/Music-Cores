@@ -1,19 +1,19 @@
 -- Made with Dr. Matt's Base Core v3
 ENT.Base 			= "base_core3"
-ENT.PrintName		= "Exile Vilify Core" -- The name the Core will come up as in the Spawnmenu
+ENT.PrintName		= "Fish Core" -- The name the Core will come up as in the Spawnmenu
 ENT.Spawnable		= true -- If true, Anyone can spawn the entity
 ENT.AdminSpawnable	= true -- If true, Admins can spawn the entity, Set ENT.Spawnable to false to make the Core Admin only.
-ENT.Author			= "Dr. Matt" -- Self Explanatory, The author of the addon, AKA Your name.
-ENT.Contact			= "Facepunch (MattJeanes)" -- Your contact, Perhaps an email address or a Steam username
-ENT.Purpose			= "It takes your mind.. again." -- The purpose of the entity
-ENT.Instructions	= "" -- The instructions of the entity, Perhaps "Insert 1 chocolate cookie to activate."
+ENT.Author			= "Nortonv8" -- Self Explanatory, The author of the addon, AKA Your name.
+ENT.Contact			= "nortonv8@gmail.com" -- Your contact, Perhaps an email address or a Steam username
+ENT.Purpose			= "Very very good, £1 fish, very very cheap, £1 fish." -- The purpose of the entity
+ENT.Instructions	= "Spawn for instant fish action!" -- The instructions of the entity, Perhaps "Insert 1 chocolate cookie to activate."
 ENT.Category		= "Portal 2 Cores"
-ENT.Animation		= "core03_idle" -- Set's the animation of the core, Look in Portal 2 Authoring Tools for more info.
-ENT.Dir				= "vlfy" -- The name of your sub-folder, must be 4 characters.
+ENT.Animation		= "core01_idle" -- Set's the animation of the core, Look in Portal 2 Authoring Tools for more info.
+ENT.Dir				= "fish" -- The name of your sub-folder, must be 4 characters.
 ENT.MusicCore		= true
 /*---------------------------------------------------------
 	ENT.Dir: Put your stuff in the following folders:
-	
+
 	sound/cores/(ENT.Dir)/
 	sound/cores/(ENT.Dir)/special/ -- For use.wav, undo.wav and dmg.wav
 	models/cores/(ENT.Dir)/
@@ -21,7 +21,7 @@ ENT.MusicCore		= true
 ---------------------------------------------------------*/
 
 function ENT:CustomInitialize()
-	timer.Simple(525, function() if IsValid(self) then self:Remove() end end)
+	timer.Simple(147, function() if IsValid(self) then self:Remove() end end)
 end
 
 if SERVER then AddCSLuaFile() end
@@ -29,14 +29,14 @@ if SERVER then AddCSLuaFile() end
 function ENT:SpawnFunction( ply, tr )
 
 	if ( !tr.Hit ) then return end
-	
+
 	local SpawnPos = tr.HitPos + tr.HitNormal * 16
-	
+
 	local ent = ents.Create( ClassName )
 	ent:SetPos( SpawnPos )
 	ent:Spawn()
 	ent:Activate()
-	
+
 	return ent
-	
+
 end
