@@ -21,7 +21,7 @@ ENT.MusicCore		= true
 ---------------------------------------------------------*/
 
 function ENT:CustomInitialize()
-	timer.Simple(525, function() if IsValid(self) then self:Remove() end end)
+	timer.Simple(278, function() if IsValid(self) then self:Remove() end end)
 end
 
 if SERVER then AddCSLuaFile() end
